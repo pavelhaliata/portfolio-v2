@@ -1,0 +1,61 @@
+---
+import ExperienceCard from '../../shared/ui/ExperienceCard.astro'
+import './Experience.css'
+
+const experiences = [
+  {
+    period: 'Апр. 2024 — настоящее время',
+    position: 'Frontend Developer',
+    company: 'ООО «АТМ»',
+    description:
+      'Разрабатываю онлайн-редактор интерьеров, квизы для подбора кухонь и дизайн-проектов и MVP B2B-платформы SWAP. ' +
+      'Реализовал административные панели, сложные формы, интеграции REST API, продуктовую телеметрию и локализацию. ' +
+      'Создал библиотеку из 30+ UI-компонентов с документацией в Storybook, сократив дублирование кода на 16%. ' +
+      'В платформе квизов повысил Lighthouse Performance с 65 до 90 баллов.',
+    technologies: [
+      'React',
+      'TypeScript',
+      'Next.js',
+      'Redux Toolkit',
+      'Radix UI',
+      'REST API',
+      'Storybook',
+    ],
+  },
+  {
+    period: 'Окт. 2023 — март 2024',
+    position: 'Frontend Developer',
+    company: 'Bnect',
+    description:
+      'Разрабатывал интерфейсы и формы веб-приложения в сфере недвижимости на React и TypeScript, ' +
+      'реализовывал валидацию данных и отображение ошибок ввода. Проводил рефакторинг компонентов и стилей. ' +
+      'Вместе с QA и backend-разработчиками исправлял функциональные и визуальные дефекты.',
+    technologies: ['React', 'TypeScript'],
+  },
+  {
+    period: 'Март — авг. 2023',
+    position: 'Inctagram — учебный командный проект',
+    company: 'IT-incubator',
+    description:
+      'Координировал frontend-задачи и участвовал в разработке UI Kit. ' +
+      'Реализовал регистрацию, JWT-аутентификацию, интернационализацию и интеграцию API через RTK Query.',
+    technologies: ['RTK Query', 'JWT', 'i18n'],
+  },
+]
+---
+
+<section class="experience" id="experience" aria-labelledby="experience-title">
+  <div class="experience__heading">
+    <h2 class="experience__title" id="experience-title">
+      Опыт
+    </h2>
+  </div>
+
+  <ol class="experience__list" role="list">
+    {experiences.map((experience) => (
+      <li>
+        <ExperienceCard {...experience} />
+      </li>
+    ))}
+  </ol>
+</section>

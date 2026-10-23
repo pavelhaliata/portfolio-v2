@@ -1,0 +1,22 @@
+.portfolio {
+  width: 100%;
+  max-width: 1024px;
+  min-height: 100dvb;
+  margin-inline: auto;
+  padding: 0 1.5rem;
+
+}
+
+@media (min-width: 768px) {
+  .portfolio {
+    padding: 0 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .portfolio {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+}

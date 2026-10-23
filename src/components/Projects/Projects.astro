@@ -1,0 +1,89 @@
+---
+import weatherForecastPreview from '../../assets/images/weather-forecast.webp'
+import inctagramPreview from '../../assets/images/inctagram.webp'
+import socialNetworkPreview from '../../assets/images/social-network.webp'
+import taskManagerPreview from '../../assets/images/todo-list.webp'
+import ProjectCard from '../../shared/ui/ProjectCard.astro'
+import './Projects.css'
+
+const projects = [
+  {
+    title: 'Inctagram',
+    description:
+      'Социальная сеть для обмена фотографиями. Пользователи могут публиковать и редактировать фото, ' +
+      'вести профиль, подписываться друг на друга и просматривать публикации других пользователей. ' +
+      'Приложение поддерживает регистрацию, авторизацию и несколько языков интерфейса.',
+    href: 'https://github.com/inctagramProd/Inctagram__front',
+    image: {
+      src: inctagramPreview.src,
+      alt: 'Inctagram: профиль пользователя с галереей фотографий',
+    },
+    technologies: ['React', 'Next.js', 'TypeScript', 'RTK Query', 'JWT', 'i18n'],
+  },
+  {
+    title: 'Weather Forecast App',
+    description:
+      'Приложение для просмотра текущей погоды и прогноза на пять дней. ' +
+      'Позволяет найти город по названию или использовать геолокацию, ' +
+      'показывает температуру, влажность и скорость ветра. ' +
+      'Данные загружаются из API через Axios, а форма поиска с валидацией построена на Formik.',
+    href: 'https://github.com/pavelhaliata/weather-forecast',
+    image: {
+      src: weatherForecastPreview.src,
+      alt: 'Weather Forecast App: текущая погода в Минске и прогноз на пять дней',
+    },
+    technologies: ['React', 'TypeScript', 'Vite', 'Axios', 'Formik'],
+  },
+  {
+    title: 'Social Network App',
+    description:
+      'Социальная сеть с регистрацией, авторизацией и чатом в реальном времени на WebSocket. ' +
+      'Позволяет управлять списком друзей, искать пользователей и редактировать профиль, фотографию и статус. ' +
+      'Состояние приложения управляется через Redux Toolkit, формы — через React Hook Form. ' +
+      'Архитектура построена по методологии Feature-Sliced Design.',
+    href: 'https://github.com/pavelhaliata/social-network-app',
+    image: {
+      src: socialNetworkPreview.src,
+      alt: 'Social Network App: экран входа в социальную сеть',
+    },
+    technologies: [
+      'React',
+      'TypeScript',
+      'Redux Toolkit',
+      'React Hook Form',
+      'WebSocket',
+      'Ant Design',
+    ],
+  },
+  {
+    title: 'Task Manager',
+    description:
+      'Менеджер задач с авторизацией и управлением несколькими списками дел. ' +
+      'Позволяет создавать, переименовывать и удалять списки и задачи, отмечать выполнение ' +
+      'и фильтровать задачи по статусу. Данные загружаются и сохраняются через REST API. ' +
+      'Реализованы валидация формы входа, индикаторы загрузки и уведомления об ошибках.',
+    href: 'https://github.com/pavelhaliata/task_manager',
+    image: {
+      src: taskManagerPreview.src,
+      alt: 'Task Manager: список дел с добавлением, редактированием и удалением задач',
+    },
+    technologies: ['React', 'TypeScript', 'Redux Toolkit', 'Material UI', 'Formik', 'Yup', 'Axios'],
+  },
+]
+---
+
+<section class="projects" id="projects" aria-labelledby="projects-title">
+  <div class="projects__heading">
+    <h2 class="projects__title" id="projects-title">
+      Проекты
+    </h2>
+  </div>
+
+  <ul class="projects__list" role="list">
+    {projects.map((project) => (
+      <li>
+        <ProjectCard {...project} />
+      </li>
+    ))}
+  </ul>
+</section>

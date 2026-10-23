@@ -1,0 +1,128 @@
+.header {
+  min-width: 0;
+  padding-top: 2rem;
+
+}
+
+.header__name {
+  color: var(--color-heading);
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  letter-spacing: -0.025em;
+}
+
+.header__role {
+  margin-top: 0.75rem;
+  color: var(--color-heading);
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.75rem;
+  letter-spacing: -0.025em;
+}
+
+.header__description {
+  max-width: 20rem;
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+
+.header__nav {
+  display: none;
+  margin-top: 4rem;
+}
+
+.header__nav-link,
+.header__nav-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: fit-content;
+  padding-block: 0.75rem;
+  color: var(--color-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.header__nav-link {
+  transition: color 150ms ease;
+}
+
+.header__nav-line {
+  width: 2rem;
+  height: 1px;
+  background-color: var(--color-nav-line);
+  transition:
+    width 150ms ease,
+    background-color 150ms ease;
+}
+
+.header__nav-link:is(:hover, :focus-visible, [aria-current='location']) {
+  color: var(--color-heading);
+}
+
+.header__nav-link:is(:hover, :focus-visible, [aria-current='location']) .header__nav-line {
+  width: 4rem;
+  background-color: var(--color-heading);
+}
+
+.header__socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.header__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  transition: color 150ms ease;
+}
+
+.header__social-link:is(:hover, :focus-visible) {
+  color: var(--color-accent);
+}
+
+@media (min-width: 640px) {
+  .header__name {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .header__role {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex: 0 1 48%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: flex-start;
+    height: 100vh;
+    height: 100svh;
+    padding-block: 6rem;
+  }
+
+  .header__nav {
+    display: block;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header__nav-link,
+  .header__nav-line,
+  .header__social-link {
+    transition: none;
+  }
+}
