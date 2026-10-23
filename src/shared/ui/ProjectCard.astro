@@ -1,0 +1,57 @@
+---
+import GitHubIcon from '../../assets/icons/github.svg'
+import CardTitle from './CardTitle.astro'
+import TechnologyTags from './TechnologyTags.astro'
+import './card.css'
+
+interface Props {
+  title?: string
+  description?: string
+  href?: string
+  sourceHref?: string
+  image?: {
+    src: string
+    alt: string
+  }
+  technologies?: string[]
+}
+
+const { title, description, href, sourceHref, image, technologies = [] } = Astro.props
+const isSourceExternal = /^https?:\/\//i.test(sourceHref ?? '')
+---
+
+<article class:list={['portfolio-card', { 'portfolio-card--with-meta': image }]}>
+  <div class="portfolio-card__content">
+    <CardTitle title={title ?? ''} href={href} />
+    <p class="portfolio-card__description">{description ?? ''}</p>
+
+    {sourceHref && (
+      <a
+        class="portfolio-card__extra-link"
+        href={sourceHref}
+        target={isSourceExternal ? '_blank' : undefined}
+        rel={isSourceExternal ? 'noopener noreferrer' : undefined}
+        aria-label={isSourceExternal ? 'Исходный код — откроется в новой вкладке' : undefined}
+      >
+        <GitHubIcon width="14" height="14" aria-hidden="true" focusable="false" />
+        <span>Исходный код</span>
+      </a>
+    )}
+
+    <TechnologyTags items={technologies} />
+  </div>
+
+  {image && (
+    <div class="portfolio-card__meta portfolio-card__preview">
+      <img
+        class="portfolio-card__image"
+        src={image.src}
+        alt={image.alt}
+        width="320"
+        height="180"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  )}
+</article>

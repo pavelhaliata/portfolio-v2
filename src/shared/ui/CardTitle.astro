@@ -1,0 +1,34 @@
+---
+import ArrowUpRightIcon from '../../assets/icons/arrow-up-right.svg'
+
+interface Props {
+  title: string
+  href?: string
+}
+
+const { title, href } = Astro.props
+const isExternal = /^https?:\/\//i.test(href ?? '')
+---
+
+<h3 class="portfolio-card__title">
+  {href ? (
+    <a
+      class="portfolio-card__title-link"
+      href={href}
+      target={isExternal ? '_blank' : undefined}
+      rel={isExternal ? 'noopener noreferrer' : undefined}
+      aria-label={isExternal ? `${title} — откроется в новой вкладке` : undefined}
+    >
+      {title}
+      <ArrowUpRightIcon
+        class="portfolio-card__arrow"
+        width="16"
+        height="16"
+        aria-hidden="true"
+        focusable="false"
+      />
+    </a>
+  ) : (
+    title
+  )}
+</h3>

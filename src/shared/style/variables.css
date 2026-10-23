@@ -1,0 +1,15 @@
+:root {
+  --font-inter: 'Inter';
+  --color-background: #0f172a;
+  --color-surface: #1e293b;
+  --color-surface-hover: rgb(30 41 59 / 50%);
+  --color-heading: #e2e8f0;
+  --color-text: #94a3b8;
+  --color-muted: #64748b;
+  --color-nav-line: #475569;
+  --color-accent: #5eead4;
+  --color-accent-soft: rgb(45 212 191 / 10%);
+  --color-accent-contrast: #134e4a;
+  --color-border: rgb(148 163 184 / 10%);
+  --color-glow: rgb(29 78 216 / 15%);
+}

@@ -1,0 +1,26 @@
+---
+import CardTitle from './CardTitle.astro'
+import TechnologyTags from './TechnologyTags.astro'
+import './card.css'
+
+interface Props {
+  period: string
+  position: string
+  company: string
+  description: string
+  href?: string
+  technologies?: string[]
+}
+
+const { period, position, company, description, href, technologies = [] } = Astro.props
+---
+
+<article class="portfolio-card portfolio-card--with-meta">
+  <p class="portfolio-card__meta">{period}</p>
+
+  <div class="portfolio-card__content">
+    <CardTitle title={`${position} · ${company}`} href={href} />
+    <p class="portfolio-card__description">{description}</p>
+    <TechnologyTags items={technologies} />
+  </div>
+</article>

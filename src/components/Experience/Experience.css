@@ -1,0 +1,52 @@
+.experience {
+  position: relative;
+  scroll-margin-top: 4rem;
+}
+
+.experience__heading {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  margin-inline: -1.5rem;
+  margin-bottom: 1rem;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--color-background);
+}
+
+.experience__title {
+  color: var(--color-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.experience__list {
+  display: grid;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .experience__heading {
+    margin-inline: -3rem;
+    padding-inline: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .experience {
+    scroll-margin-top: 6rem;
+  }
+
+  .experience__heading {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}

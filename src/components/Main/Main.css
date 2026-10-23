@@ -1,0 +1,21 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  min-width: 0;
+  padding-top: 6rem;
+}
+
+@media (min-width: 768px) {
+  .main {
+    gap: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    flex: 0 1 52%;
+    gap: 9rem;
+    padding-block: 6rem;
+  }
+}

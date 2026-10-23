@@ -1,0 +1,100 @@
+---
+import GitHubIcon from '../../assets/icons/github.svg'
+import LinkedInIcon from '../../assets/icons/linkedin.svg'
+import TelegramIcon from '../../assets/icons/telegram.svg'
+import MailIcon from '../../assets/icons/mail.svg'
+import './Header.css'
+
+interface NavigationItem {
+  label: string
+  href?: string
+}
+
+interface SocialLink {
+  label: string
+  href: string
+  icon: 'github' | 'linkedin' | 'telegram' | 'mail'
+}
+
+interface Props {
+  name?: string
+  role?: string
+  description?: string
+  navigation?: NavigationItem[]
+  socialLinks?: SocialLink[]
+}
+
+const {
+  name = 'Павел Галята',
+  role = 'Frontend Developer',
+  description = 'Разрабатываю удобные интерфейсы для веба.',
+  navigation = [
+    { label: 'О себе', href: '#about' },
+    { label: 'Опыт', href: '#experience' },
+    { label: 'Проекты', href: '#projects' },
+  ],
+  socialLinks = [],
+} = Astro.props
+
+const icons = {
+  github: GitHubIcon,
+  linkedin: LinkedInIcon,
+  telegram: TelegramIcon,
+  mail: MailIcon,
+}
+---
+
+<header class="header">
+  <div>
+    <h1 class="header__name">
+      <a href="/">{name}</a>
+    </h1>
+    <p class="header__role">{role}</p>
+    <p class="header__description">{description}</p>
+
+    {navigation.length > 0 && (
+      <nav class="header__nav" aria-label="Разделы портфолио">
+        <ul role="list">
+          {navigation.map(({ label, href }) => (
+            <li>
+              {href ? (
+                <a class="header__nav-link" href={href}>
+                  <span class="header__nav-line" aria-hidden="true" />
+                  <span>{label}</span>
+                </a>
+              ) : (
+                <span class="header__nav-label">
+                  <span class="header__nav-line" aria-hidden="true" />
+                  <span>{label}</span>
+                </span>
+              )}
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )}
+  </div>
+
+  {socialLinks.length > 0 && (
+    <ul class="header__socials" role="list" aria-label="Контакты">
+      {socialLinks.map(({ label, href, icon }) => {
+        const Icon = icons[icon]
+        const isExternal = /^https?:\/\//i.test(href)
+
+        return (
+          <li>
+            <a
+              class="header__social-link"
+              href={href}
+              target={isExternal ? '_blank' : undefined}
+              rel={isExternal ? 'noopener noreferrer' : undefined}
+              aria-label={isExternal ? `${label} — откроется в новой вкладке` : label}
+            >
+              <Icon width="24" height="24" aria-hidden="true" focusable="false" />
+            </a>
+          </li>
+        )
+      })}
+    </ul>
+  )}
+</header>
