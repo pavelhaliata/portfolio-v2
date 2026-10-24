@@ -2,27 +2,13 @@
 import Header from '../components/Header/Header.astro'
 import Main from '../components/Main/Main.astro'
 import Layout from '../layouts/Layout.astro'
+import { socialLinks } from '../shared/config/contacts'
 import './index.css'
 ---
 
 <Layout>
   <div class="portfolio">
-    <Header
-      socialLinks={[
-        { label: 'GitHub', href: 'https://github.com/pavelhaliata', icon: 'github' },
-        {
-          label: 'LinkedIn',
-          href: 'https://www.linkedin.com/in/pavel-haliata/',
-          icon: 'linkedin',
-        },
-        { label: 'Telegram', href: 'https://t.me/pawl_h', icon: 'telegram' },
-        {
-          label: 'Написать на pavelvladimirovichvs@gmail.com',
-          href: 'mailto:pavelvladimirovichvs@gmail.com',
-          icon: 'mail',
-        },
-      ]}
-    />
+    <Header socialLinks={socialLinks} />
     <Main />
   </div>
 </Layout>

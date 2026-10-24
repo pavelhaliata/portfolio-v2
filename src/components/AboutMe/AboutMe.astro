@@ -1,5 +1,6 @@
 ---
 import ArrowUpRightIcon from '../../assets/icons/arrow-up-right.svg'
+import { contacts } from '../../shared/config/contacts'
 
 import './AboutMe.css'
 ---
@@ -39,19 +40,15 @@ import './AboutMe.css'
 
     <p>
       Если хочешь обсудить проект или просто познакомиться, напиши мне на{' '}
-      <a href="mailto:pavelvladimirovichvs@gmail.com" target="_blank" rel="noopener noreferrer">
+      <a href={contacts.email.href} target="_blank" rel="noopener noreferrer">
         Email
       </a>
       , в{' '}
-      <a
-        href="https://www.linkedin.com/in/pavel-haliata/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href={contacts.linkedin.href} target="_blank" rel="noopener noreferrer">
         LinkedIn
       </a>{' '}
       или{' '}
-      <a href="https://t.me/pawl_h" target="_blank" rel="noopener noreferrer">
+      <a href={contacts.telegram.href} target="_blank" rel="noopener noreferrer">
         Telegram
       </a>
       .
