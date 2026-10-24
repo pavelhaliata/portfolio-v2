@@ -22,6 +22,10 @@
   text-transform: uppercase;
 }
 
+.about-me__body{
+  margin-bottom: 2rem;
+}
+
 .about-me__body p + p {
   margin-top: 1rem;
 }
@@ -38,6 +42,28 @@
 
 .about-me__body a:is(:hover, :focus-visible) {
   color: var(--color-accent);
+}
+
+.about-me__footer-link{
+  width: max-content;
+  color: var(--color-heading);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 150ms ease;
+}
+
+.about-me__footer-link:is(:hover, :focus-visible){
+  color: var(--color-accent);
+}
+
+.about-me__footer-arrow{
+  transition: transform 150ms ease;
+}
+
+.about-me__footer-link:hover .about-me__footer-arrow{
+  transform: translate(2px, -2px);
 }
 
 @media (min-width: 768px) {
@@ -65,6 +91,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .about-me__footer-arrow,
   .about-me__body a {
     transition: none;
   }

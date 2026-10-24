@@ -1,4 +1,6 @@
 ---
+import ArrowUpRightIcon from '../../assets/icons/arrow-up-right.svg'
+
 import './AboutMe.css'
 ---
 
@@ -11,30 +13,36 @@ import './AboutMe.css'
 
   <div class="about-me__body">
     <p>
-      Привет, я Павел — frontend-разработчик из Минска. Создаю продуктовые
-      B2B/B2C-приложения на&nbsp;<strong>React, TypeScript и Next.js</strong>. Веду задачи от
-      выяснения требований и проектирования решения до выпуска в продакшен.
+      Привет! Я Павел Галята — frontend-разработчик из Минска с тремя годами опыта создания
+      продуктовых B2B- и B2C-приложений. Работаю с&nbsp;<strong>React, TypeScript и Next.js</strong>:
+      превращаю требования и идеи в интерфейсы, которыми удобно пользоваться. Веду задачи от
+      обсуждения требований и проектирования решения до выпуска в продакшен. Мне важно, чтобы за
+      понятным интерфейсом стоял код, который легко поддерживать и развивать.
     </p>
 
     <p>
-      Развиваю архитектуру frontend-приложений, оптимизирую интерфейсы и загрузку данных. Создаю
-      переиспользуемые UI-компоненты, документирую их в&nbsp;<strong>Storybook</strong>&nbsp;и
-      провожу рефакторинг. В разработке использую AI-инструменты.
+      Сейчас работаю в&nbsp;<strong>ООО «АТМ»</strong>, где разрабатываю онлайн-редактор интерьеров,
+      приложения для подбора кухонь и дизайн-проектов, а также B2B-платформу. Создаю административные
+      панели, многошаговые формы и интерфейсы для работы с каталогами и документами, интегрирую
+      REST API. Отдельное внимание уделяю переиспользуемым компонентам: разработал библиотеку
+      из&nbsp;<strong>30+ UI-компонентов</strong>&nbsp;с документацией в&nbsp;<strong>Storybook</strong>,
+      которая помогла унифицировать интерфейсы и сократить дублирование кода.
     </p>
 
     <p>
-      Мой код можно посмотреть на{' '}
-      <a href="https://github.com/pavelhaliata" target="_blank" rel="noopener noreferrer">
-        GitHub
-      </a>
-      . Если хочешь обсудить проект или просто познакомиться, напиши мне{' '}
-      <a
-        href="mailto:pavelvladimirovichvs@gmail.com"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      Мне интересна работа на пересечении пользовательского опыта и инженерных решений: как
+      упростить сложный сценарий, сделать приложение быстрее и сохранить понятную архитектуру
+      по мере развития продукта. Занимаюсь рефакторингом, оптимизацией загрузки страниц и данных.
+      В разработке также использую AI-инструменты, сохраняя внимание к качеству и пониманию
+      принимаемых решений.
+    </p>
+
+    <p>
+      Если хочешь обсудить проект или просто познакомиться, напиши мне на{' '}
+      <a href="mailto:pavelvladimirovichvs@gmail.com" target="_blank" rel="noopener noreferrer">
         Email
-      </a>,{' '}в{' '}
+      </a>
+      , в{' '}
       <a
         href="https://www.linkedin.com/in/pavel-haliata/"
         target="_blank"
@@ -48,5 +56,22 @@ import './AboutMe.css'
       </a>
       .
     </p>
+  </div>
+  <div class="about-me__footer">
+    <a
+      href="/documents/Pavel_Haliata_Frontend_Developer_Resume_3.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="about-me__footer-link"
+    >
+      Просмотреть полное резюме
+      <ArrowUpRightIcon
+        class="about-me__footer-arrow"
+        width="16"
+        height="16"
+        aria-hidden="true"
+        focusable="false"
+      />
+    </a>
   </div>
 </section>
